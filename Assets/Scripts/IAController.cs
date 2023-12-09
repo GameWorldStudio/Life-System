@@ -35,12 +35,10 @@ public class IAController : MonoBehaviour
             playerPos = player.transform.position;
             navMeshAgent.SetDestination(playerPos);
 
-            if (navMeshAgent.pathStatus == NavMeshPathStatus.PathComplete && navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance)
+            if (navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance)
             {
-                Debug.Log("1");
                 if (canAttack &&navMeshAgent.velocity.sqrMagnitude == 0f)
                 {
-                    Debug.Log("2");
                     StartCoroutine(Attack());
                     canAttack = false;
                 }

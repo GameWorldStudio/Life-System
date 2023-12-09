@@ -14,10 +14,7 @@ public class IntValueSO : ScriptableObject
         set
         {
             this.value = value;
-            if(onValueChange != null)
-            {
-                onValueChange.Invoke(this.value);
-            }
+            onValueChange?.Invoke(this.value);
         }
     }
 }

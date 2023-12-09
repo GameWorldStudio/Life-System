@@ -3,10 +3,13 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    [Header("Life")]
+    [Header("Life properties")]
     public GameObject heartContainer;
+    private Image[] allHeart;
+    public IntValueSO playerLife;
+
     public GameObject shieldContainer;
-    [SerializeField] Image[] allHeart;
+
     public Sprite[] heartStatus;
     Image[] allShield;
     public Sprite[] shieldStatus;
@@ -84,7 +87,6 @@ public class UIManager : MonoBehaviour
 
     public void ShowScore(int score)
     {
-        Debug.Log("Ici");
        GameObject scoreUI =  Instantiate(scorePrefab, scoreSpawn.position, scoreSpawn.rotation, this.transform);
 
        scoreUI.GetComponent<Text>().text = score.ToString();

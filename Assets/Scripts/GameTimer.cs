@@ -16,6 +16,7 @@ public class GameTimer : MonoBehaviour
                 yield return new WaitForSeconds(1);
                 totalTime += 1;
             }
+            yield return null;
         }
     }
     // Start is called before the first frame update
